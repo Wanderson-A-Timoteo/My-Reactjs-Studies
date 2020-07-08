@@ -17,5 +17,5 @@ Todos os exemplos estão em ordem didática, iniciando do básico de callbacks. 
 - [Promisees: Promises com vários catches](http://bit.ly/2Yavhmi)
 - [Promisees: Promise.all](http://bit.ly/2YfRb7G)
 - [Artigo sobre async/await](https://imasters.com.br/desenvolvimento/funcoes-assincronas-e-retornos-como-o-async-await-tornaram-o-codigo-mais-legivel)
-- [Artigo que gerou esse webinar](https://medium.com/trainingcenter/entendendo-promises-de-uma-vez-por-todas-32442ec725c2)
+- [Artigo](https://medium.com/trainingcenter/entendendo-promises-de-uma-vez-por-todas-32442ec725c2)
 
