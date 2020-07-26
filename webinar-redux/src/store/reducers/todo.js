@@ -1,6 +1,15 @@
 const initialState = {
-  list: []
-}
+  list: [
+    {
+        id: 1,
+        name: 'Primeiro item'
+    },
+    {
+        id: 2,
+        name: 'Segundo item'
+    }
+]
+};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {

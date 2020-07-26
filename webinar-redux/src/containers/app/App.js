@@ -1,32 +1,48 @@
-import React, {Components} from 'react'
-import List from '../../components/list';
-import Input from '../../components/input';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Button from '../../components/button';
+import Input from '../../components/input';
+import List from '../../components/list';
 
-class App extends Components {
-  state = {
-    input:''
-  };
+import { addTodo } from '../../store/actions/todo'
 
+class App extends Component {
+    state = {
+        input: ''
+    };
 
-  handleOnClick = () => {
-    console.log('Button was clicked');
+    handleOnClick = () => {
+        console.log('Button was clicked');
+        const { addTodo } = this.props;
+        const { input } = this.state;
 
-  };
+        addTodo(input)
+    };
 
-  handleOnChange = event => {
-    console.log('Input was changed', event.target.value);
-  };
+    handleOnChange = (event) => {
+        this.setState({ input: event.target.value });
+    }
 
-  render() {
-    return (
-      <div>
-        <List todoList={[]} />
-        <Input onChange={event => this.handleOnChange(event)} />
-        <Button onClick={() => this.handleOnClick()}>Adicionar</Button>
-      </div>
-    );
-  }
+    render() {
+        const { input } = this.state;
+        const { todoList } = this.props;
+        console.log(todoList)
+        return (
+            <div>
+                <List />
+                <Input onChange={event => this.handleOnChange(event)} value={input} />
+                <Button onClick={() => this.handleOnClick()}>Adicionar</Button>
+            </div>
+        )
+    }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    todoList: state.todo
+});
+
+export default connect(
+    mapStateToProps,
+    { addTodo }
+)(App);
