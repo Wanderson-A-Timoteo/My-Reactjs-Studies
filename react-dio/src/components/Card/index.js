@@ -1,13 +1,34 @@
+import { useState } from 'react'
+
 const Card = () => {
+    const [valor, setValor] = useState(0)
+    function Adicionar() {
+        setValor(valor + 1)
+    }
+
+    function Remover() {
+        setValor(valor - 1)
+    }
+
     return (
         <div className="card">
             <div className="card-header">Card em React</div>
             <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">Meu texto no card</p>
-                <a href="/" className="btn btn-primary">
-                    Go somewhere
-                </a>
+                <button
+                    type="button"
+                    className="btn btn-success"
+                    onClick={Adicionar}
+                >
+                    Adicionar
+                </button>
+                <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={Remover}
+                >
+                    Remover
+                </button>
+                <p className="card-text"> {valor} </p>
             </div>
         </div>
     )
