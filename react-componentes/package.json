@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "webpack": "^4.43.0",
-    "webpack-dev-server": "^3.10.3",
+    "webpack-dev-server": "^5.0.4",
     "webpack-manifest-plugin": "^2.2.0",
     "workbox-webpack-plugin": "^4.3.1"
   }
